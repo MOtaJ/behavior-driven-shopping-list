@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class Shoppinglist {
 
   constructor(items){
@@ -22,3 +23,31 @@ class Shoppinglist {
     }
   }
 }
+=======
+class ShoppingList {
+  constructor(items) {
+    this.items = []
+    this.addItem.bind(this);
+  }
+
+  addItem(ShoppingListItem) {
+    if(ShoppingListItem) {
+      items.push(ShoppingListItem);
+    } else {
+      return error;
+    }
+  }
+
+  removeItem(ShoppingListItem) {
+
+  }
+
+}
+
+  /*render(ShoppingListItem) {
+    let renderList = '';
+    for var(i = 0; i < items.length; i++){
+      renderList += items.length.render();
+  }
+    return `<ul>${renderList}</ul>`*/
+>>>>>>> 1082e6c601a2aeb1af47c5e97f06993ac77db29a

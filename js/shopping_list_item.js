@@ -2,6 +2,7 @@ class ShoppingListItem {
   constructor(name, description){
     this.name = name;
     this.description = description;
+    this.is_done = null;
   }
 
   check() {
@@ -13,7 +14,8 @@ class ShoppingListItem {
   }
 
   render() {
-    return 'li class =" completed_[is_done]" <span>[name]</span> <span>[description]</span></li>';
+    return `<li class='completed_${this.is_done}'><span>${this.name}</span><span>${this.description}</span></li>`
   }
 }
+
 
