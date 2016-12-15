@@ -87,15 +87,14 @@ describe('ShoppingList', () => {
 
   beforeEach(() => {
     let newItem = new ShoppingListItem('apple', 'a big juicy apple');
-
   })
 
   it('should be a class', () => {
     myList.should.be.a.function
   })
-  console.log(typeof myList);
+
   it('should have property named "items"', () => {
-    myList.constructor.should.have.length(1)
+    myList.should.have.property('items')
   })
 
 })
@@ -125,9 +124,12 @@ describe('render', () => {
   let myList = new ShoppingList();
   let newItem = new ShoppingListItem('apple', 'a big juicy apple');
 
-  it('method "render" should return an HTML string', () => {
-   myList.render.should.equal(`<ul>${myList.items[0].render()}${myList.items[1].render()}</ul>`)
+  it('should be a function', () => {
+    myList.render.should.be.a.function
+  })
 
+  it('should return an HTML formatted string', () => {
+    myList.render.should.equal(`<ul><li>apple : a big juicy apple</li></ul>`);
   })
 })
 //

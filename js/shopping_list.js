@@ -1,26 +1,31 @@
 class ShoppingList {
-  constructor(items) {
-    this.items = []
-    this.addItem.bind(this);
+  constructor() {
+    this.items = [];
   }
 
   addItem(ShoppingListItem) {
-    if(ShoppingListItem) {
-      items.push(ShoppingListItem);
+    if(ShoppingListItem instanceof ShoppingListItem) {
+      this.items.push(ShoppingListItem)
     } else {
-      return error;
+      throw error ('Not a shopping list item');
     }
   }
 
   removeItem(ShoppingListItem) {
+    if(this.items.indexOf(ShoppingListItem) > -1) {
+      this.items.splice(this.items.indexOf(ShoppingListItem, 1))
+    } else {
+      throw error ('There is no Shopping List Item to remove')
+    }
+  }
+
+  render() {
+    let renderList = ' ';
+    for (i = 0; i < this.items.length; i++){
+      renderList += this.items[i].render();
+  }
+    return `<ul>${renderList}</ul>`;
 
   }
 
 }
-
-  /*render(ShoppingListItem) {
-    let renderList = '';
-    for var(i = 0; i < items.length; i++){
-      renderList += items.length.render();
-  }
-    return `<ul>${renderList}</ul>`*/
