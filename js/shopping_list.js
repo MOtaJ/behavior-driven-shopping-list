@@ -1,31 +1,39 @@
+"use strict";
+
 class ShoppingList {
-  constructor() {
+  constructor(items){
     this.items = [];
   }
 
-  addItem(ShoppingListItem) {
-    if(ShoppingListItem instanceof ShoppingListItem) {
-      this.items.push(ShoppingListItem)
+  addItem(item){
+    if(item instanceof ShoppingListItem){
+     this.items.push(item);
     } else {
-      throw error ('Not a shopping list item');
+      throw Error (`${items} does not belong here`);
     }
   }
 
-  removeItem(ShoppingListItem) {
-    if(this.items.indexOf(ShoppingListItem) > -1) {
-      this.items.splice(this.items.indexOf(ShoppingListItem, 1))
+  removeItem(item){
+    if(item instanceof ShoppinglistItem && this.items.index0f(item) > -1){
+      this.items.splice(this.items.index0f(item), 1);
+    } else if(arguments.length === 0){
+      this.items.pop();
     } else {
-      throw error ('There is no Shopping List Item to remove')
+      throw Error (`this is not an item`);
     }
   }
 
-  render() {
-    let renderList = ' ';
-    for (i = 0; i < this.items.length; i++){
+   render(shoppingListItem) {
+    let renderList = '';
+
+    for (let i = 0; i < this.items.length; i++){
       renderList += this.items[i].render();
-  }
+    }
+
     return `<ul>${renderList}</ul>`;
 
   }
 
 }
+
+

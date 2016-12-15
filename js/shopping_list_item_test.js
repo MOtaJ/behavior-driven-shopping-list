@@ -33,6 +33,8 @@ describe ('ShoppingListItem', () => {
 
 })
 
+
+
 describe('check', () => {
 
   let pizza;
@@ -43,6 +45,9 @@ describe('check', () => {
 
   it('should be a method called check', () => {
     pizza.should.be.a.function
+  })
+
+  it('method check should return true', () => {
     pizza.check();
     pizza.is_done.should.equal(true);
   })
@@ -59,6 +64,9 @@ describe('uncheck', () => {
 
   it('should have a method called uncheck', () => {
     pizza.should.be.a.function
+  })
+
+  it('method uncheck should set is_done to false', () => {
     pizza.uncheck();
     pizza.is_done.should.equal(false);
   })
@@ -83,7 +91,7 @@ describe('render', () => {
 
 describe('ShoppingList', () => {
 
-  let myList = new ShoppingList();
+    let myList = new ShoppingList();
 
   beforeEach(() => {
     let newItem = new ShoppingListItem('apple', 'a big juicy apple');
@@ -99,12 +107,14 @@ describe('ShoppingList', () => {
 
 })
 
+
+
 describe('addItem', () => {
 
   let myList = new ShoppingList();
   let newItem = new ShoppingListItem('apple', 'a big juicy apple');
 
-  it('should add an object to the "items" array', () => {
+  it('Add Item should be a function', () => {
     myList.addItem.should.be.a.function
   })
 
@@ -123,13 +133,16 @@ describe('render', () => {
 
   let myList = new ShoppingList();
   let newItem = new ShoppingListItem('apple', 'a big juicy apple');
+  myList.addItem(newItem);
 
   it('should be a function', () => {
     myList.render.should.be.a.function
   })
 
+
   it('should return an HTML formatted string', () => {
-    myList.render.should.equal(`<ul><li>apple : a big juicy apple</li></ul>`);
+    myList.render().should.equal(`<ul><li class=\'completed_null\'><span>apple</span><span>a big juicy apple</span></li></ul>`);
   })
+
 })
-//
+
