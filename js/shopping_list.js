@@ -14,9 +14,9 @@ class ShoppingList {
   }
 
   removeItem(item){
-    if(item instanceof ShoppinglistItem && this.items.index0f(item) > -1){
+    if(this.items.indexOf(item) > -1){
       this.items.splice(this.items.index0f(item), 1);
-    } else if(arguments.length === 0){
+    } else if(item === undefined){
       this.items.pop();
     } else {
       throw Error (`this is not an item`);

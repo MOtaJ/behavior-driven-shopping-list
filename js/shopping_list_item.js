@@ -15,12 +15,8 @@ class ShoppingListItem {
   }
 
   render() {
-<<<<<<< HEAD
-    return `<li class='completed_${this.is_done}'><span>${this.name}</span> <span>${this.description}</span> <input class = "check-box" type="checkbox" onchange="changeCheckedStatus"></li>`
-=======
-    return `<li class='completed_${this.is_done}'><span>${this.name}</span> <span>${this.description}</span><input class = "check-box" type="checkbox" ></li>`
 
->>>>>>> 32588c363b2a0f67447a013e09f8559af41bb5c4
+    return `<li class='completed_${this.is_done}'><span>${this.name}</span> <span>${this.description}</span><input class = "check-box" type="checkbox" ><button class='x-button' onclick="removeItemButtonClicked(this.parentElement.getAttribute('data-idx'))">[x]</button></li>`
   }
 }
 

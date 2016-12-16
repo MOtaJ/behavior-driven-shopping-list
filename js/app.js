@@ -13,11 +13,11 @@ let title = document.getElementById('inputTitle');
   document.getElementById("content").innerHTML = theShoppingList.render();
 
   const checkOnChange = document.querySelectorAll(".check-box");
-  console.log('chekcing checkOnChange' , checkOnChange);
+  console.log('checking checkOnChange' , checkOnChange);
   for (let i = 0; i < checkOnChange.length; i++){
     console.log(checkOnChange[i]);
     checkOnChange[i].addEventListener('click', () =>{
-      console.log("here");
+      console.log("here")
     });
   }
 }
@@ -40,3 +40,6 @@ function changeCheckedStatus(idx, checkbox){
 //   }
 // }
 
+function removeItemButtonClicked(idx) {
+  theShoppingList.removeItem(theShoppingList.items[idx]);
+}
