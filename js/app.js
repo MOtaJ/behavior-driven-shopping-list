@@ -15,18 +15,12 @@ let new_shopping_list_item = new ShoppingListItem(title.value, description.value
 console.log(new_shopping_list_item);
 let output =  theShoppingList.addItem(new_shopping_list_item);
 document.getElementById("content").innerHTML = theShoppingList.render();
-
-
 }
-
-const checkOnChange = document.querySelectorAll("check-box");
-
-checkOnChange.addEventListener('click', changeCheckedStatus);
 
 function changeCheckedStatus(idx, checkbox){
   if (checkbox.checked === true) {
     theShoppingList.items[idx].check();
-  } else {
+  } else if(checkbox.checked === false) {
     theShoppingList.items[idx].uncheck();
   }
 }

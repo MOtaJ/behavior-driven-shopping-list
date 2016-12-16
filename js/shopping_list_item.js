@@ -15,11 +15,8 @@ class ShoppingListItem {
   }
 
   render() {
-    return `<li class='completed_${this.is_done}'><span>${this.name}</span> <span>${this.description}</span> <input class = "check-box" type="checkbox" ></li>`
-
+    return `<li class='completed_${this.is_done}'><span>${this.name}</span> <span>${this.description}</span> <input class = "check-box" type="checkbox" onchange="changeCheckedStatus"></li>`
   }
 }
 
-// function test() {
-//       console.log("sanity check");
-//     }
+
