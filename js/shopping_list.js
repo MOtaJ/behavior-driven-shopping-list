@@ -1,13 +1,12 @@
 "use strict";
 
 class ShoppingList {
-
   constructor(items){
     this.items = [];
   }
 
-  addItem(items){
-    if(this.items instanceof ShoppingListItem){
+  addItem(item){
+    if(item instanceof ShoppingListItem){
      this.items.push(item);
     } else {
       throw Error (`${items} does not belong here`);
@@ -28,7 +27,7 @@ class ShoppingList {
     let renderList = '';
 
     for (let i = 0; i < this.items.length; i++){
-      renderList += items.length.render();
+      renderList += this.items[i].render();
     }
 
     return `<ul>${renderList}</ul>`;
@@ -36,3 +35,5 @@ class ShoppingList {
   }
 
 }
+
+
