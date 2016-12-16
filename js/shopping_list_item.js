@@ -3,6 +3,7 @@ class ShoppingListItem {
     this.name = name;
     this.description = description;
     this.is_done = null;
+    this.checkbox = null;
   }
 
   check() {
@@ -14,8 +15,11 @@ class ShoppingListItem {
   }
 
   render() {
-    return `<li class='completed_${this.is_done}'><span>${this.name}</span><span>${this.description}</span></li>`
+    return `<li class='completed_${this.is_done}'><span>${this.name}</span> <span>${this.description}</span> <input class = "check-box" type="checkbox" ></li>`
+
   }
 }
 
-
+// function test() {
+//       console.log("sanity check");
+//     }
